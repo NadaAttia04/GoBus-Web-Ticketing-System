@@ -5,7 +5,6 @@ A modern web-based ticket booking platform for Go Bus Egypt, featuring real-time
   <img width="800" alt="image" src="https://github.com/user-attachments/assets/f4b1f7bd-bb59-42c3-bc03-b85a0e1ca677" />
 
 ---
-
 ## 1. Introduction
 The **Go Bus Web Ticketing System** is a digital platform inspired by the prominent **Go Bus** company in Egypt.  
 Its mission is to enhance the public transportation experience by providing a **fully online, secure, and user-friendly ticket booking solution** for intercity bus travelers.  
