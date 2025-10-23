@@ -1,19 +1,30 @@
-# 🚌GoBus-Web-Ticketing-System
+cat <<'EOF' > README.md
+# 🚌 GoBus-Web-Ticketing-System
+
 A modern web-based ticket booking platform for Go Bus Egypt, featuring real-time trip tracking, online seat reservation, secure payments, and multilingual support.
-<img width="1600" height="765" alt="image" src="https://github.com/user-attachments/assets/f4b1f7bd-bb59-42c3-bc03-b85a0e1ca677" />
-<img width="1600" height="773" alt="image" src="https://github.com/user-attachments/assets/99059aa2-17b9-4e19-abc3-48b533d8fa8f" />
-<img width="1600" height="771" alt="image" src="https://github.com/user-attachments/assets/18615895-0836-4368-bf12-0741bad5d674" />
-<img width="1600" height="762" alt="image" src="https://github.com/user-attachments/assets/078ddd0e-c0c0-492e-8674-65b0487b6bfe" />
-<img width="1600" height="769" alt="image" src="https://github.com/user-attachments/assets/9cd407d6-1e43-44d9-9125-6b74fbd88455" />
-<img width="1600" height="463" alt="image" src="https://github.com/user-attachments/assets/b6735996-aeb2-45d7-87c7-001e1e908f19" />
-<img width="1600" height="563" alt="image" src="https://github.com/user-attachments/assets/e6ba9f51-9c74-4914-8fe4-23fd5468c30c" />
-<img width="1600" height="380" alt="image" src="https://github.com/user-attachments/assets/8e5f78ec-f375-49e7-b9e1-46fd7b85c102" />
-<img width="1600" height="380" alt="image" src="https://github.com/user-attachments/assets/66962d33-a016-4098-b15a-b05b53da496b" />
-<img width="1600" height="631" alt="image" src="https://github.com/user-attachments/assets/11bec479-5db1-4dee-909a-10cf3cc9a4c7" />
-<img width="1600" height="380" alt="image" src="https://github.com/user-attachments/assets/4ecffec5-d07a-4df6-95e9-3f04e778a6ca" />
-<img width="1600" height="379" alt="image" src="https://github.com/user-attachments/assets/0183acdb-387d-4778-bc0d-3f9daa990246" />
-<img width="1600" height="769" alt="image" src="https://github.com/user-attachments/assets/b0d206d0-2671-4757-9660-ecd9ab8892f9" />
-<img width="1600" height="761" alt="image" src="https://github.com/user-attachments/assets/0347682d-7d3e-48ec-b2ee-353fe228c621" />
+
+---
+
+## 🖼️ Project Screenshots
+
+<p align="center">
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/f4b1f7bd-bb59-42c3-bc03-b85a0e1ca677" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/99059aa2-17b9-4e19-abc3-48b533d8fa8f" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/18615895-0836-4368-bf12-0741bad5d674" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/078ddd0e-c0c0-492e-8674-65b0487b6bfe" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/9cd407d6-1e43-44d9-9125-6b74fbd88455" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/b6735996-aeb2-45d7-87c7-001e1e908f19" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/e6ba9f51-9c74-4914-8fe4-23fd5468c30c" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/8e5f78ec-f375-49e7-b9e1-46fd7b85c102" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/66962d33-a016-4098-b15a-b05b53da496b" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/11bec479-5db1-4dee-909a-10cf3cc9a4c7" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/4ecffec5-d07a-4df6-95e9-3f04e778a6ca" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/0183acdb-387d-4778-bc0d-3f9daa990246" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/b0d206d0-2671-4757-9660-ecd9ab8892f9" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/0347682d-7d3e-48ec-b2ee-353fe228c621" />
+</p>
+
+---
 
 ## 1. Introduction
 The **Go Bus Web Ticketing System** is a digital platform inspired by the prominent **Go Bus** company in Egypt.  
@@ -150,45 +161,6 @@ It combines **advanced web technologies** with real user needs to deliver a **se
 ## 🚀 How to Run the Project
 
 ### 1. Clone the Repository
-git clone https://github.com/your-username/GoBus-Web-Ticketing-System.git  
+```bash
+git clone https://github.com/your-username/GoBus-Web-Ticketing-System.git
 cd GoBus-Web-Ticketing-System
-
-### 2. Install Dependencies
-# For backend:
-cd backend  
-npm install
-
-# For frontend:
-cd frontend  
-npm install
-
-### 3. Configure Environment Variables
-# Create a .env file in both backend and frontend directories, and add your configurations:
-DB_URI=your_database_connection_string  
-JWT_SECRET=your_secret_key  
-PAYMENT_API_KEY=your_payment_gateway_key
-
-### 4. Run the Project
-# Start backend:
-npm run start
-
-# Start frontend:
-npm run dev
-
-### 5. Access the App
-# Visit:
-http://localhost:3000  
-to explore the system locally.
-
----
-
-## 🔮 Future Enhancements
-- **AI-based Demand Prediction:** Use AI models to predict peak times and optimize bus schedules.  
-- **Mobile Application:** Develop native iOS/Android apps for easier on-the-go booking.  
-- **Voice Assistant Integration:** Enable voice-based ticket booking.  
-- **Loyalty & Reward System:** Offer points and discounts for frequent travelers.  
-- **Smart Notification System:** Personalized alerts for offers, delays, and trip updates.  
-- **Multi-City Integration:** Expansion to other transport networks and cities.
-
----
-
