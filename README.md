@@ -2,27 +2,7 @@ cat <<'EOF' > README.md
 # 🚌 GoBus-Web-Ticketing-System
 
 A modern web-based ticket booking platform for Go Bus Egypt, featuring real-time trip tracking, online seat reservation, secure payments, and multilingual support.
-
----
-
-## 🖼️ Project Screenshots
-
-<p align="center">
   <img width="800" alt="image" src="https://github.com/user-attachments/assets/f4b1f7bd-bb59-42c3-bc03-b85a0e1ca677" />
-  <img width="800" alt="image" src="https://github.com/user-attachments/assets/99059aa2-17b9-4e19-abc3-48b533d8fa8f" />
-  <img width="800" alt="image" src="https://github.com/user-attachments/assets/18615895-0836-4368-bf12-0741bad5d674" />
-  <img width="800" alt="image" src="https://github.com/user-attachments/assets/078ddd0e-c0c0-492e-8674-65b0487b6bfe" />
-  <img width="800" alt="image" src="https://github.com/user-attachments/assets/9cd407d6-1e43-44d9-9125-6b74fbd88455" />
-  <img width="800" alt="image" src="https://github.com/user-attachments/assets/b6735996-aeb2-45d7-87c7-001e1e908f19" />
-  <img width="800" alt="image" src="https://github.com/user-attachments/assets/e6ba9f51-9c74-4914-8fe4-23fd5468c30c" />
-  <img width="800" alt="image" src="https://github.com/user-attachments/assets/8e5f78ec-f375-49e7-b9e1-46fd7b85c102" />
-  <img width="800" alt="image" src="https://github.com/user-attachments/assets/66962d33-a016-4098-b15a-b05b53da496b" />
-  <img width="800" alt="image" src="https://github.com/user-attachments/assets/11bec479-5db1-4dee-909a-10cf3cc9a4c7" />
-  <img width="800" alt="image" src="https://github.com/user-attachments/assets/4ecffec5-d07a-4df6-95e9-3f04e778a6ca" />
-  <img width="800" alt="image" src="https://github.com/user-attachments/assets/0183acdb-387d-4778-bc0d-3f9daa990246" />
-  <img width="800" alt="image" src="https://github.com/user-attachments/assets/b0d206d0-2671-4757-9660-ecd9ab8892f9" />
-  <img width="800" alt="image" src="https://github.com/user-attachments/assets/0347682d-7d3e-48ec-b2ee-353fe228c621" />
-</p>
 
 ---
 
@@ -149,6 +129,26 @@ Survey results from Go Bus regular customers:
 - Includes trip planners, booking overview, and printable QR-coded tickets.  
 - **Multi-language toggle (Arabic/English).**  
 - Seamless experience across mobile and desktop.
+- ## 🖼️ Project Screenshots
+
+<p align="center">
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/f4b1f7bd-bb59-42c3-bc03-b85a0e1ca677" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/99059aa2-17b9-4e19-abc3-48b533d8fa8f" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/18615895-0836-4368-bf12-0741bad5d674" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/078ddd0e-c0c0-492e-8674-65b0487b6bfe" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/9cd407d6-1e43-44d9-9125-6b74fbd88455" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/b6735996-aeb2-45d7-87c7-001e1e908f19" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/e6ba9f51-9c74-4914-8fe4-23fd5468c30c" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/8e5f78ec-f375-49e7-b9e1-46fd7b85c102" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/66962d33-a016-4098-b15a-b05b53da496b" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/11bec479-5db1-4dee-909a-10cf3cc9a4c7" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/4ecffec5-d07a-4df6-95e9-3f04e778a6ca" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/0183acdb-387d-4778-bc0d-3f9daa990246" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/b0d206d0-2671-4757-9660-ecd9ab8892f9" />
+  <img width="800" alt="image" src="https://github.com/user-attachments/assets/0347682d-7d3e-48ec-b2ee-353fe228c621" />
+</p>
+
+---
 
 ---
 
@@ -160,7 +160,70 @@ It combines **advanced web technologies** with real user needs to deliver a **se
 
 ## 🚀 How to Run the Project
 
-### 1. Clone the Repository
-```bash
+### **1. Clone the Repository**
+\`\`\`bash
 git clone https://github.com/your-username/GoBus-Web-Ticketing-System.git
 cd GoBus-Web-Ticketing-System
+\`\`\`
+
+---
+
+### 🧩 **2. Install Dependencies**
+\`\`\`bash
+# For backend:
+cd backend
+npm install
+
+# For frontend:
+cd frontend
+npm install
+\`\`\`
+
+---
+
+### ⚙️ **3. Configure Environment Variables**
+Create a \`.env\` file in both **backend** and **frontend** directories, and add the following:
+\`\`\`
+DB_URI=your_database_connection_string
+JWT_SECRET=your_secret_key
+PAYMENT_API_KEY=your_payment_gateway_key
+\`\`\`
+
+---
+
+### ▶️ **4. Run the Project**
+\`\`\`bash
+# Start backend:
+npm run start
+
+# Start frontend:
+npm run dev
+\`\`\`
+
+---
+
+### 🌐 **5. Access the App**
+Visit the app locally at:  
+👉 **http://localhost:3000**
+
+---
+
+### 🔮 **Future Enhancements**
+- **AI-based Demand Prediction** – Optimize schedules using real-time analytics.  
+- **Mobile Application (iOS/Android)** – Provide a dedicated mobile experience.  
+- **Voice Assistant Integration** – Enable booking through voice commands.  
+- **Loyalty & Reward System** – Reward frequent travelers.  
+- **Smart Notification System** – Deliver personalized alerts.  
+- **Multi-City Integration** – Expand coverage across Egypt.
+
+---
+## 🧑‍💻 Author
+
+- **Nada Attia** → [GitHub Profile](https://github.com/NadaAttia04)  
+- **Farida Ayman** → [GitHub Profile](https://github.com/FaridaAyman)  
+- **Rodina Ahmed** → [GitHub Profile](https://github.com/RodinaAhmed)
+
+---
+
+⭐ *If you like this project, don't forget to star the repository!*
+
