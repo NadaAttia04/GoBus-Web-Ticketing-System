@@ -1,0 +1,1069 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title data-en="Go Bus - Book Your Ticket Now" data-ar="جو باص - احجز تذكرتك الآن">جو باص - احجز تذكرتك الآن</title>
+  <link id="bootstrap-css" rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #f9f9f9;
+    }
+    .hero {
+      background-image: url("c:/Users/Nada/Desktop/1 (1).png");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      padding: 80px 0;
+      position: relative;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+    .hero .container {
+      position: relative;
+      z-index: 2;
+    }
+    .booking-box {
+      background: #fc9900;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    }
+    .booking-box input,
+    .booking-box select {
+      margin-bottom: 10px;
+    }
+    .btn-toggle {
+      background: white;
+      color: #fc9900;
+      font-weight: bold;
+    }
+    .btn-toggle.active {
+      background: #005eb8;
+      color: white;
+    }
+    .payment-logos img {
+      height: 40px;
+      margin: 0 10px;
+    }
+    .bus-card img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    footer {
+      background: #333333;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    .page-section {
+      display: none;
+    }
+    .page-section.active {
+      display: block;
+    }
+    .navbar-nav a.active {
+      font-weight: 600;
+      border-bottom: 2px solid #fc9900;
+    }
+    .nav-pills .nav-link.active {
+      background-color: #fc9900;
+      color: white;
+    }
+    .nav-pills .nav-link {
+      color: #333;
+      margin: 0 3px;
+      border-radius: 20px;
+    }
+    .page-header {
+      padding: 20px 0;
+      margin-bottom: 20px;
+      background-color: #f5f5f5;
+      border-bottom: 1px solid #ddd;
+    }
+    .banner-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    .icon-feature {
+      font-size: 2rem;
+      color: #fc9900;
+      margin-bottom: 15px;
+    }
+    .station-card {
+      transition: all 0.3s ease;
+    }
+    .station-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    }
+    .bus-type-img {
+      height: 200px;
+      object-fit: cover;
+      border-top-left-radius: 10px;
+      border-top-right-radius: 10px;
+    }
+    .user-avatar {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #fc9900;
+      margin: 0 auto 20px;
+      display: block;
+    }
+    .qr-code {
+      width: 150px;
+      height: 150px;
+      margin: 0 auto;
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom sticky-top">
+    <div class="container">
+      <a class="navbar-brand fw-bold text-warning" href="#home" onclick="showPage('home')">
+        <img src="c:\Users\Nada\Desktop\go-bus-dark.png" height="40" class="me-2" alt="GoBus ">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav nav nav-pills ms-auto">
+          <li class="nav-item">
+            <a class="nav-link active" href="#home" onclick="showPage('home')" data-en="Home" data-ar="الرئيسية">الرئيسية</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#booking" onclick="showPage('booking')" data-en="Booking" data-ar="الحجز">الحجز</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#tickets" onclick="showPage('tickets')" data-en="My Tickets" data-ar="تذاكري">تذاكري</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#info" onclick="showPage('info')" data-en="Info" data-ar="معلومات">معلومات</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#account" onclick="showPage('account')" data-en="My Account" data-ar="حسابي">حسابي</a>
+          </li>
+          <li class="nav-item">
+            <a class="btn btn-sm text-primary" href="#" id="toggleLang" data-en="العربية" data-ar="English">English</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <section id="home" class="page-section active">
+    <div class="hero">
+      <div class="container d-flex justify-content-between align-items-center flex-wrap">
+        <div class="text-center text-md-start mb-4">
+          <h1 class="fw-bold" data-en="Book Your Go Bus Now" data-ar="احجز أتوبيس جوباص الآن">احجز أتوبيس جوباص الآن</h1>
+          <p class="lead" data-en="Book your bus with your credit card in less than two minutes" data-ar="احجز أتوبيسك ببطاقتك الائتمانية في أقل من دقيقتين">احجز أتوبيسك ببطاقتك الائتمانية في أقل من دقيقتين</p>
+        </div>
+        <div class="booking-box col-md-5">
+          <h5 class="text-white fw-bold mb-4 text-center" data-en="Book Go Bus" data-ar="احجز أتوبيس جوباص">احجز أتوبيس جوباص</h5>
+          <div class="d-flex mb-3">
+            <button class="btn btn-toggle w-50 active" type="button" data-en="One Way" data-ar="اتجاه واحد">اتجاه واحد</button>
+            <button class="btn btn-toggle w-50" type="button" data-en="Round Trip" data-ar="ذهاب وعودة">ذهاب وعودة</button>
+          </div>
+          
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label class="text-white mb-1 small" data-en="From" data-ar="سفر من">سفر من</label>
+              <div class="input-group">
+                <span class="input-group-text bg-white border-0">
+                  <i class="fas fa-map-marker-alt text-warning"></i>
+                </span>
+                <select class="form-select border-0" required>
+                  <option selected data-en="Cairo (Abdel Monem Riad)" data-ar="القاهرة (عبد المنعم رياض)">القاهرة (عبد المنعم رياض)</option>
+                  <option data-en="Alexandria" data-ar="الإسكندرية">الإسكندرية</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <label class="text-white mb-1 small" data-en="To" data-ar="وصول إلى">وصول إلى</label>
+              <div class="input-group">
+                <span class="input-group-text bg-white border-0">
+                  <i class="fas fa-map-marker-alt text-warning"></i>
+                </span>
+                <select class="form-select border-0" required>
+                  <option selected data-en="Hurghada" data-ar="الغردقة">الغردقة</option>
+                  <option data-en="Luxor" data-ar="الأقصر">الأقصر</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-12">
+              <label class="text-white mb-1 small" data-en="Trip Date" data-ar="تاريخ الرحلة">تاريخ الرحلة</label>
+              <div class="input-group">
+                <span class="input-group-text bg-white border-0">
+                  <i class="fas fa-calendar text-warning"></i>
+                </span>
+                <input type="date" class="form-control border-0" value="2025-05-02" required>
+              </div>
+            </div>
+            <div class="col-12">
+              <label class="text-white mb-1 small" data-en="Number of Passengers" data-ar="عدد المسافرين">عدد المسافرين</label>
+              <div class="input-group">
+                <button class="btn btn-light border-0" type="button" id="decrementBtn">-</button>
+                <input type="number" class="form-control text-center border-0" min="1" value="1" id="passengerCount" readonly>
+                <button class="btn btn-light border-0" type="button" id="incrementBtn">+</button>
+              </div>
+            </div>
+            <div class="col-12 mt-4">
+              <button class="btn btn-success w-100 py-2" type="button" onclick="showPage('booking')" data-en="Show Trips" data-ar="أعرض الرحلات">أعرض الرحلات</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+ <div class="container mt-5 d-flex justify-content-between align-items-center flex-wrap">
+      <div class="col-md-6 d-flex justify-content-center">
+      <img src="c:\Users\Nada\Desktop\websitebanner_0001_Layer-2-copy.jpg" class="banner-img" alt="Go Bus Promotion" style="width: 100%; height: 300px; object-fit: cover; max-width: 500px;">
+      </div>
+      <div class="col-md-6 d-flex justify-content-center">
+      <img src="c:\Users\Nada\Desktop\382-344.jpg" class="banner-img" alt="Go Bus Promotion 2" style="width: 100%; height: 300px; object-fit: cover; max-width: 500px;">
+      </div>
+    </div>
+
+    <div class="container my-5">
+      <h3 class="text-center mb-4" data-en="Our Features" data-ar="مميزاتنا">مميزاتنا</h3>
+      <div class="row text-center">
+        <div class="col-md-3 mb-4">
+          <i class="fas fa-bus icon-feature"></i>
+          <h5 data-en="Modern Fleet" data-ar="أسطول حديث">أسطول حديث</h5>
+          <p data-en="Latest models with luxury seats" data-ar="أحدث الموديلات بمقاعد فاخرة">أحدث الموديلات بمقاعد فاخرة</p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <i class="fas fa-wifi icon-feature"></i>
+          <h5 data-en="Free WiFi" data-ar="واي فاي مجاني">واي فاي مجاني</h5>
+          <p data-en="Stay connected during your trip" data-ar="ابق متصلاً خلال رحلتك">ابق متصلاً خلال رحلتك</p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <i class="fas fa-map-marker-alt icon-feature"></i>
+          <h5 data-en="Live Tracking" data-ar="تتبع مباشر">تتبع مباشر</h5>
+          <p data-en="Know where your bus is anytime" data-ar="تعرف على مكان الحافلة في أي وقت">تعرف على مكان الحافلة في أي وقت</p>
+        </div>
+        <div class="col-md-3 mb-4">
+          <i class="fas fa-lock icon-feature"></i>
+          <h5 data-en="Secure Payment" data-ar="دفع آمن">دفع آمن</h5>
+          <p data-en="Multiple secure payment options" data-ar="خيارات دفع متعددة وآمنة">خيارات دفع متعددة وآمنة</p>
+        </div>
+      </div>
+    </div>
+    
+    <!-- إضافة قسم تطبيق جوباص على الموبايل -->
+    <div class="container mt-5">
+      <div class="row align-items-center">
+        <div class="col-md-6 text-center text-md-end">
+          <h2 class="fw-bold" data-en="Go Bus Mobile App" data-ar="تطبيق جوباص على الموبايل">تطبيق جوباص على الموبايل</h2>
+          <p class="ms-auto" style="max-width: 450px;" data-en="Book your tickets anytime anywhere with Go Bus mobile app - Available for Android and iOS devices" data-ar="احجز تذاكرك في أي وقت وأي مكان مع تطبيق جوباص للموبايل - متوفر لأجهزة الأندرويد وآيفون">احجز تذاكرك في أي وقت وأي مكان مع تطبيق جوباص للموبايل - متوفر لأجهزة الأندرويد وآيفون</p>
+          <div class="mt-3">
+            <a href="#" class="btn btn-dark mb-2 ms-2" data-en="App Store" data-ar="App Store">
+              <i class="fab fa-apple me-1"></i> App Store
+            </a>
+            <a href="#" class="btn btn-dark mb-2 ms-2" data-en="Google Play" data-ar="Google Play">
+              <i class="fab fa-google-play me-1"></i> Google Play
+            </a>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <img src="c:\Users\Nada\Desktop\pic (1).png" alt="Go Bus Mobile App" class="img-fluid" style="max-height: 500px;">
+        </div>
+      </div>
+    </div>
+<!-- إضافة قسم خطوط سفر أتوبيسات جوباص -->
+<div class="container my-5">
+  <h2 class="text-center fw-bold mb-4" data-en="Go Bus Travel Lines" data-ar="خطوط سفر أتوبيسات جوباص" style="color: rgb(9, 9, 9);">خطوط سفر أتوبيسات جوباص</h2>
+  <p class="text-center mb-5" data-en="Choose your favorite travel line from our wide network" data-ar="اختر خط سفرك المفضل من شبكتنا الواسعة" style="color: rgb(0, 0, 0);">اختر خط سفرك المفضل من شبكتنا الواسعة</p>
+  
+  <div class="row text-center">
+    <div class="col-md-2 col-6 mb-4">
+      <div class="destination-link" style="color: red;">
+        <div data-en="Alexandria - Cairo" data-ar="الإسكندرية - القاهرة" style="color: red;">الإسكندرية - القاهرة</div>
+        <div data-en="Hurghada - Cairo" data-ar="الغردقة - القاهرة" style="color: red;">الغردقة - القاهرة</div>
+        <div data-en="Dahab - Cairo" data-ar="دهب - القاهرة" style="color: red;">دهب - القاهرة</div>
+        <div data-en="Marsa Alam - Cairo" data-ar="مرسى علم - القاهرة" style="color: red;">مرسى علم - القاهرة</div>
+        <div data-en="Luxor - Cairo" data-ar="الأقصر - القاهرة" style="color: red;">الأقصر - القاهرة</div>
+      </div>
+    </div>
+    <div class="col-md-2 col-6 mb-4">
+      <div class="destination-link" style="color: red;">
+        <div data-en="Hurghada - El Gouna" data-ar="الغردقة - الجونة" style="color: red;">الغردقة - الجونة</div>
+        <div data-en="Hurghada - Alexandria" data-ar="الغردقة - الإسكندرية" style="color: red;">الغردقة - الإسكندرية</div>
+        <div data-en="Hurghada - Marsa Alam" data-ar="الغردقة - مرسى علم" style="color: red;">الغردقة - مرسى علم</div>
+        <div data-en="Sharm - Cairo" data-ar="شرم الشيخ - القاهرة" style="color: red;">شرم الشيخ - القاهرة</div>
+        <div data-en="Sharm - Dahab" data-ar="شرم الشيخ - دهب" style="color: red;">شرم الشيخ - دهب</div>
+      </div>
+    </div>
+    <div class="col-md-2 col-6 mb-4">
+      <div class="destination-link" style="color: red;">
+        <div data-en="Aswan - Cairo" data-ar="أسوان - القاهرة" style="color: red;">أسوان - القاهرة</div>
+        <div data-en="Cairo - Port Said" data-ar="القاهرة - بورسعيد" style="color: red;">القاهرة - بورسعيد</div>
+        <div data-en="Cairo - Tanta" data-ar="القاهرة - طنطا" style="color: red;">القاهرة - طنطا</div>
+        <div data-en="Cairo - Mansoura" data-ar="القاهرة - المنصورة" style="color: red;">القاهرة - المنصورة</div>
+        <div data-en="Cairo - Zagazig" data-ar="القاهرة - الزقازيق" style="color: red;">القاهرة - الزقازيق</div>
+      </div>
+    </div>
+    <div class="col-md-2 col-6 mb-4">
+      <div class="destination-link" style="color: red;">
+        <div data-en="Cairo - Sohag" data-ar="القاهرة - سوهاج" style="color: red;">القاهرة - سوهاج</div>
+        <div data-en="Cairo - North Coast" data-ar="القاهرة - الساحل الشمالي" style="color: red;">القاهرة - الساحل الشمالي</div>
+        <div data-en="Cairo - Asyut" data-ar="القاهرة - أسيوط" style="color: red;">القاهرة - أسيوط</div>
+        <div data-en="Hurghada - Asyut" data-ar="الغردقة - أسيوط" style="color: red;">الغردقة - أسيوط</div>
+        <div data-en="Dahab - Sharm El Sheikh" data-ar="دهب - شرم الشيخ" style="color: red;">دهب - شرم الشيخ</div>
+      </div>
+    </div>
+    <div class="col-md-2 col-6 mb-4">
+      <div class="destination-link" style="color: red;">
+        <div data-en="Ismailia - Cairo" data-ar="الإسماعيلية - القاهرة" style="color: red;">الإسماعيلية - القاهرة</div>
+        <div data-en="Suez - Cairo" data-ar="السويس - القاهرة" style="color: red;">السويس - القاهرة</div>
+        <div data-en="Aswan - Luxor" data-ar="أسوان - الأقصر" style="color: red;">أسوان - الأقصر</div>
+        <div data-en="Luxor - Hurghada" data-ar="الأقصر - الغردقة" style="color: red;">الأقصر - الغردقة</div>
+        <div data-en="Alexandria - Marsa Matrouh" data-ar="الإسكندرية - مرسى مطروح" style="color: red;">الإسكندرية - مرسى مطروح</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- إضافة قسم فئات جوباص مع الصور والأسعار -->
+<div class="container my-5">
+  <h2 class="text-center fw-bold mb-4" data-en="Go Bus Categories" data-ar="فئات جوباص">فئات جوباص</h2>
+  <p class="text-center mb-5" data-en="Discover our various bus categories and choose the one that suits you" data-ar="اكتشف فئات الأتوبيسات المختلفة واختر ما يناسبك">اكتشف فئات الأتوبيسات المختلفة واختر ما يناسبك</p>
+  
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="position-relative">
+          <img src="c:\Users\Nada\Desktop\1.png" class="card-img-top" alt="New Deluxe" style="height: 200px; object-fit: cover;">
+          <span class="position-absolute top-0 start-0 bg-success text-white px-2 py-1 m-2 small">الأكثر حجزاً</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title" data-en="New Deluxe" data-ar="New Deluxe">New Deluxe</h5>
+          <div class="d-flex justify-content-between">
+            <span data-en="225 EGP" data-ar="225 جنيه">225 جنيه</span>
+            <span data-en="- 265 EGP" data-ar="- 265 جنيه">- 265 جنيه</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="position-relative">
+          <img src="c:\Users\Nada\Desktop\1 (3).png" class="card-img-top" alt="Economy" style="height: 200px; object-fit: cover;">
+          <span class="position-absolute top-0 start-0 bg-danger text-white px-2 py-1 m-2 small">عرض خاص</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title" data-en="Economy" data-ar="Economy">Economy</h5>
+          <div class="d-flex justify-content-between">
+            <span data-en="165 EGP" data-ar="165 جنيه">165 جنيه</span>
+            <span data-en="- 225 EGP" data-ar="- 225 جنيه">- 225 جنيه</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100">
+        <div class="position-relative">
+          <img src="c:\Users\Nada\Desktop\1 (1).png" class="card-img-top" alt="Super Go B" style="height: 200px; object-fit: cover;">
+          <span class="position-absolute top-0 start-0 bg-warning text-white px-2 py-1 m-2 small">وسائل ترفيهية</span>
+        </div>
+        <div class="card-body">
+          <h5 class="card-title" data-en="Super Go B" data-ar="Super Go B">Super Go B</h5>
+          <div class="d-flex justify-content-between">
+            <span data-en="245 EGP" data-ar="245 جنيه">245 جنيه</span>
+            <span data-en="- 365 EGP" data-ar="- 365 جنيه">- 365 جنيه</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+    <!-- قسم طرق دفع متعددة -->
+    <div class="container text-center my-5">
+      <h3 style="font-weight: bold; font-size: 28px;" data-en="Multiple Payment Methods" data-ar="طرق دفع متعددة">طرق دفع متعددة</h3>
+      <p style="margin-bottom: 30px;" data-en="Choose the payment method that suits you" data-ar="إختر وسيلة الدفع المناسبة لك و استمتع بحجز رحلتك القادمة مع جوباص">إختر وسيلة الدفع المناسبة لك و استمتع بحجز رحلتك القادمة مع جوباص</p>
+      <div class="payment-logos d-flex justify-content-center flex-wrap align-items-center my-4">
+        <!-- تنسيق المباعدة والشكل بالضبط كما في الصورة المرفقة -->
+        <div class="d-flex justify-content-center align-items-center" style="width: 100%; max-width: 1000px; margin: 0 auto;">
+          <img src="momken.png" alt="ممكن" height="50" style="margin: 0 15px;">
+          <span style="color: #ddd; font-size: 24px;">|</span>
+          <img src="meeza-no-bg.png" alt="ميزة" height="50" style="margin: 0 15px;">
+          <span style="color: #ddd; font-size: 24px;">|</span>
+          <img src="basata-logo.png" alt="باساطا" height="50" style="margin: 0 15px;">
+          <span style="color: #ddd; font-size: 24px;">|</span>
+          <img src="aman.png" alt="أمان" height="50" style="margin: 0 15px;">
+          <span style="color: #ddd; font-size: 24px;">|</span>
+          <img src="fawry-ar.png" alt="فوري" height="50" style="margin: 0 15px;">
+          <span style="color: #ddd; font-size: 24px;">|</span>
+          <img src="credit-card.png" alt="فيزا وماستركارد" height="50" style="margin: 0 15px;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="booking" class="page-section">
+    <div class="page-header">
+      <div class="container">
+        <h2 class="text-center" data-en="Book Your Trip" data-ar="احجز رحلتك">احجز رحلتك</h2>
+      </div>
+    </div>
+    
+    <div class="container">
+      <img src="c:\Users\Nada\Desktop\Capture.PNG" class="banner-img" alt="Book your trip" style="width: 100%; height: auto; object-fit: contain;">
+    </div>
+    
+    <div class="container">
+      <div class="card mb-4">
+        <div class="card-header bg-light">
+          <h5 class="m-0" data-en="Search Trips" data-ar="البحث عن رحلات">البحث عن رحلات</h5>
+        </div>
+        <div class="card-body">
+          <form class="row g-3">
+            <div class="col-md-3">
+              <label class="form-label" data-en="From" data-ar="من">من</label>
+              <select class="form-select">
+                <option value="cairo" data-en="Cairo" data-ar="القاهرة">القاهرة</option>
+                <option value="alex" data-en="Alexandria" data-ar="الإسكندرية">الإسكندرية</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label" data-en="To" data-ar="إلى">إلى</label>
+              <select class="form-select">
+                <option value="hurghada" data-en="Hurghada" data-ar="الغردقة">الغردقة</option>
+                <option value="luxor" data-en="Luxor" data-ar="الأقصر">الأقصر</option>
+              </select>
+            </div>
+            <div class="col-md-3">
+              <label class="form-label" data-en="Date" data-ar="التاريخ">التاريخ</label>
+              <input type="date" class="form-control">
+            </div>
+            <div class="col-md-3">
+              <label class="form-label" data-en="Passengers" data-ar="عدد الركاب">عدد الركاب</label>
+              <input type="number" class="form-control" min="1" value="1">
+            </div>
+            <div class="col-12 text-center mt-4">
+              <button type="button" class="btn btn-primary" id="searchTripsBtn" data-en="Search" data-ar="بحث">بحث</button>
+            </div>
+          </form>
+        </div>
+      </div>
+      
+      <div id="tripResults">
+        <h3 class="mb-4" data-en="Trip Results" data-ar="نتائج الرحلات">نتائج الرحلات</h3>
+        <div class="row g-4">
+          <div class="col-md-4">
+            <div class="card border-success h-100">
+                <img src="c:\Users\Nada\Desktop\1 (1).png" class="card-img-top" alt="New Deluxe Interior">
+              <div class="card-body">
+                <h5 class="card-title" data-en="Cairo → Hurghada" data-ar="القاهرة → الغردقة">القاهرة → الغردقة</h5>
+                <p class="card-text" data-en="🕒 8:00 AM — 🚌 New Deluxe — 💺 12 Seats Available" data-ar="🕒 8:00 صباحًا — 🚌 New Deluxe — 💺 متاح 12 كرسي">🕒 8:00 صباحًا — 🚌 New Deluxe — 💺 متاح 12 كرسي</p>
+                <p class="card-text" data-en="💰 Price: 250 EGP" data-ar="💰 السعر: 250 جنيه">💰 السعر: 250 جنيه</p>
+                <button class="btn btn-success w-100" id="bookTrip1" data-en="Book Now" data-ar="احجز الآن">احجز الآن</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card border-primary h-100">
+                <img src="c:\Users\Nada\Desktop\1.png" class="card-img-top" alt="Economy Interior">
+              <div class="card-body">
+                <h5 class="card-title" data-en="Cairo → Hurghada" data-ar="القاهرة → الغردقة">القاهرة → الغردقة</h5>
+                <p class="card-text" data-en="🕒 12:00 PM — 🚌 Economy — 💺 8 Seats Available" data-ar="🕒 12:00 مساءً — 🚌 Economy — 💺 متاح 8 كراسي">🕒 12:00 مساءً — 🚌 Economy — 💺 متاح 8 كراسي</p>
+                <p class="card-text" data-en="💰 Price: 180 EGP" data-ar="💰 السعر: 180 جنيه">💰 السعر: 180 جنيه</p>
+                <button class="btn btn-primary w-100" id="bookTrip2" data-en="Book Now" data-ar="احجز الآن">احجز الآن</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="card border-warning h-100">
+                <img src="c:\Users\Nada\Desktop\1 (4).png" class="card-img-top" alt="Super Go B Interior">
+              <div class="card-body">
+                <h5 class="card-title" data-en="Cairo → Hurghada" data-ar="القاهرة → الغردقة">القاهرة → الغردقة</h5>
+                <p class="card-text" data-en="🕒 5:00 PM — 🚌 Super Go B — 💺 5 Seats Available" data-ar="🕒 5:00 مساءً — 🚌 Super Go B — 💺 متاح 5 كراسي">🕒 5:00 مساءً — 🚌 Super Go B — 💺 متاح 5 كراسي</p>
+                <p class="card-text" data-en="💰 Price: 260 EGP" data-ar="💰 السعر: 260 جنيه">💰 السعر: 260 جنيه</p>
+                <button class="btn btn-warning w-100 text-white" id="bookTrip3" data-en="Book Now" data-ar="احجز الآن">احجز الآن</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div id="bookingConfirmation" style="display:none;" class="mt-5">
+        <div class="alert alert-success" role="alert" data-en="✅ Your trip has been successfully booked!" data-ar="✅ تم حجز رحلتك بنجاح!">✅ تم حجز رحلتك بنجاح!</div>
+        <div class="card mx-auto" style="max-width: 500px;">
+          <div class="text-center mt-3 mb-3">
+            <img src="c:/Users/Nada/Desktop/1.png" class="qr-code" alt="Booking QR Code">
+          </div>
+          <div class="card-body">
+            <h5 class="card-title text-center" data-en="Booking Details" data-ar="تفاصيل الحجز">تفاصيل الحجز</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item" data-en="🚌 Trip: Cairo → Hurghada" data-ar="🚌 الرحلة: القاهرة → الغردقة">🚌 الرحلة: القاهرة → الغردقة</li>
+              <li class="list-group-item" data-en="⏰ Time: 8:00 AM" data-ar="⏰ الموعد: 8:00 صباحًا">⏰ الموعد: 8:00 صباحًا</li>
+              <li class="list-group-item" data-en="💺 Seats: 1" data-ar="💺 عدد المقاعد: 1">💺 عدد المقاعد: 1</li>
+              <li class="list-group-item" data-en="💰 Price: 250 EGP" data-ar="💰 السعر: 250 جنيه">💰 السعر: 250 جنيه</li>
+            </ul>
+            <div class="text-center mt-3">
+              <button class="btn btn-outline-primary" onclick="showPage('tickets')" data-en="View My Tickets" data-ar="عرض تذاكري">عرض تذاكري</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tickets" class="page-section">
+    <div class="page-header">
+      <div class="container">
+        <h2 class="text-center" data-en="My Tickets" data-ar="تذاكري">تذاكري</h2>
+      </div>
+    </div>
+    
+    <div class="container">
+      <div class="card">
+        <div class="card-body">
+          <div class="table-responsive">
+            <table class="table table-bordered text-center">
+              <thead class="table-light">
+                <tr>
+                  <th data-en="Ticket No." data-ar="رقم التذكرة">رقم التذكرة</th>
+                  <th data-en="From" data-ar="من">من</th>
+                  <th data-en="To" data-ar="إلى">إلى</th>
+                  <th data-en="Date" data-ar="التاريخ">التاريخ</th>
+                  <th data-en="Time" data-ar="الساعة">الساعة</th>
+                  <th data-en="Category" data-ar="الفئة">الفئة</th>
+                  <th data-en="Status" data-ar="الحالة">الحالة</th>
+                  <th data-en="Actions" data-ar="إجراءات">إجراءات</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>456789</td>
+                  <td data-en="Cairo" data-ar="القاهرة">القاهرة</td>
+                  <td data-en="Hurghada" data-ar="الغردقة">الغردقة</td>
+                  <td>2025-05-10</td>
+                  <td data-en="08:00 AM" data-ar="08:00 ص">08:00 ص</td>
+                  <td>New Deluxe</td>
+                  <td><span class="badge bg-success" data-en="Booked" data-ar="محجوزة">محجوزة</span></td>
+                  <td>
+                    <button class="btn btn-sm btn-outline-dark" data-en="Show QR" data-ar="عرض QR">عرض QR</button>
+                    <button class="btn btn-sm btn-outline-danger" data-en="Cancel" data-ar="إلغاء">إلغاء</button>
+                  </td>
+                </tr>
+                <tr>
+                  <td>456790</td>
+                  <td data-en="Alexandria" data-ar="الإسكندرية">الإسكندرية</td>
+                  <td data-en="Luxor" data-ar="الأقصر">الأقصر</td>
+                  <td>2025-05-12</td>
+                  <td data-en="02:00 PM" data-ar="02:00 م">02:00 م</td>
+                  <td>Economy</td>
+                  <td><span class="badge bg-secondary" data-en="Used" data-ar="مستخدمة">مستخدمة</span></td>
+                  <td>
+                    <button class="btn btn-sm btn-outline-dark" data-en="Show QR" data-ar="عرض QR">عرض QR</button>
+                    <button class="btn btn-sm btn-outline-secondary disabled" data-en="Cancel" data-ar="إلغاء">إلغاء</button>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center mt-4">
+        <button class="btn btn-primary" onclick="showPage('booking')" data-en="Book New Trip" data-ar="حجز رحلة جديدة">حجز رحلة جديدة</button>
+        <button class="btn btn-outline-danger" onclick="window.print()" data-en="Print Tickets" data-ar="طباعة التذاكر">طباعة التذاكر</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="info" class="page-section">
+    <div class="page-header">
+      <div class="container">
+        <h2 class="text-center" data-en="Trip Information" data-ar="معلومات الرحلات">معلومات الرحلات</h2>
+      </div>
+    </div>
+    
+    <div class="container">
+      <ul class="nav nav-tabs mb-4" id="infoTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="destinations-tab" data-bs-toggle="tab" data-bs-target="#destinations" type="button" role="tab" data-en="Destinations" data-ar="وجهات السفر">وجهات السفر</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="stations-tab" data-bs-toggle="tab" data-bs-target="#stations" type="button" role="tab" data-en="Bus Stations" data-ar="محطات جو باص">محطات جو باص</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="terms-tab" data-bs-toggle="tab" data-bs-target="#terms" type="button" role="tab" data-en="Terms & Conditions" data-ar="الشروط والأحكام">الشروط والأحكام</button>
+        </li>
+      </ul>
+          
+          <h4 class="mb-4 text-center" data-en="Our Destinations" data-ar="وجهاتنا">وجهاتنا</h4>
+          <div class="row">
+            <div class="col-md-6">
+              <div class="list-group">
+                <div class="list-group-item list-group-item-action">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span data-en="Cairo ↔ Alexandria" data-ar="القاهرة ↔ الإسكندرية">القاهرة ↔ الإسكندرية</span>
+                    <span class="badge bg-primary" data-en="Popular" data-ar="شائع">شائع</span>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span data-en="Cairo ↔ Hurghada" data-ar="القاهرة ↔ الغردقة">القاهرة ↔ الغردقة</span>
+                    <span class="badge bg-primary" data-en="Popular" data-ar="شائع">شائع</span>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span data-en="Alexandria ↔ Luxor" data-ar="الإسكندرية ↔ الأقصر">الإسكندرية ↔ الأقصر</span>
+                    <span class="badge bg-success" data-en="New" data-ar="جديد">جديد</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="list-group">
+                <div class="list-group-item list-group-item-action">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span data-en="Cairo ↔ Sharm El Sheikh" data-ar="القاهرة ↔ شرم الشيخ">القاهرة ↔ شرم الشيخ</span>
+                    <span class="badge bg-primary" data-en="Popular" data-ar="شائع">شائع</span>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span data-en="Sohag ↔ Minya" data-ar="سوهاج ↔ المنيا">سوهاج ↔ المنيا</span>
+                    <span class="badge bg-warning text-dark" data-en="Limited" data-ar="محدود">محدود</span>
+                  </div>
+                </div>
+                <div class="list-group-item list-group-item-action">
+                  <div class="d-flex justify-content-between align-items-center">
+                    <span data-en="Cairo ↔ Tanta" data-ar="القاهرة ↔ طنطا">القاهرة ↔ طنطا</span>
+                    <span class="badge bg-success" data-en="New" data-ar="جديد">جديد</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="text-center mt-4">
+            <button class="btn btn-primary" onclick="showPage('booking')" data-en="Book a Trip" data-ar="احجز رحلة">احجز رحلة</button>
+          </div>
+        </div>
+        
+        <div class="tab-pane fade" id="stations" role="tabpanel">
+          <h4 class="mb-4 text-center" data-en="Go Bus Stations" data-ar="محطات جو باص">محطات جو باص</h4>
+          <div class="row row-cols-1 row-cols-md-3 g-4 text-center">
+            <div class="col">
+              <div class="card h-100 station-card">
+                <div class="card-body">
+                  <h5 class="card-title" data-en="Abdel Monem Riad Station" data-ar="محطة عبد المنعم رياض">محطة عبد المنعم رياض</h5>
+                  <p class="card-text" data-en="Cairo" data-ar="القاهرة">القاهرة</p>
+                  <p class="card-text small" data-en="Open 24/7" data-ar="مفتوح على مدار الساعة">مفتوح على مدار الساعة</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 station-card">
+                <div class="card-body">
+                  <h5 class="card-title" data-en="Sidi Gaber Station" data-ar="محطة سيدي جابر">محطة سيدي جابر</h5>
+                  <p class="card-text" data-en="Alexandria" data-ar="الإسكندرية">الإسكندرية</p>
+                  <p class="card-text small" data-en="Open 6 AM - 12 AM" data-ar="مفتوح من 6 ص إلى 12 م">مفتوح من 6 ص إلى 12 م</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 station-card">
+                <div class="card-body">
+                  <h5 class="card-title" data-en="El Gouna Station" data-ar="محطة الجونة">محطة الجونة</h5>
+                  <p class="card-text" data-en="Hurghada" data-ar="الغردقة">الغردقة</p>
+                  <p class="card-text small" data-en="Open 8 AM - 10 PM" data-ar="مفتوح من 8 ص إلى 10 م">مفتوح من 8 ص إلى 10 م</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 station-card">
+                <div class="card-body">
+                  <h5 class="card-title" data-en="Dahab Station" data-ar="محطة دهب">محطة دهب</h5>
+                  <p class="card-text" data-en="South Sinai" data-ar="جنوب سيناء">جنوب سيناء</p>
+                  <p class="card-text small" data-en="Open 8 AM - 8 PM" data-ar="مفتوح من 8 ص إلى 8 م">مفتوح من 8 ص إلى 8 م</p>
+                </div>
+              </div>
+            </div>
+            <div class="col">
+              <div class="card h-100 station-card">
+                <div class="card-body">
+                  <h5 class="card-title" data-en="New Sohag Station" data-ar="محطة سوهاج الجديدة">محطة سوهاج الجديدة</h5>
+                  <p class="card-text" data-en="Sohag" data-ar="سوهاج">سوهاج</p>
+                  <p class="card-text small" data-en="Open 7 AM - 9 PM" data-ar="مفتوح من 7 ص إلى 9 م">مفتوح من 7 ص إلى 9 م</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tab-pane fade" id="terms" role="tabpanel">
+          <h4 class="mb-4 text-center" data-en="Terms & Conditions" data-ar="الشروط والأحكام">الشروط والأحكام</h4>
+          <div class="card">
+            <div class="card-body">
+              <p class="lead" data-en="By using the Go Bus website, you agree to comply with the following policies:" data-ar="باستخدامك موقع جو باص، فإنك توافق على الالتزام بسياساتنا التالية:">باستخدامك موقع جو باص، فإنك توافق على الالتزام بسياساتنا التالية:</p>
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item" data-en="All data is protected and not shared with third parties." data-ar="جميع البيانات محمية ولا يتم مشاركتها مع طرف ثالث.">جميع البيانات محمية ولا يتم مشاركتها مع طرف ثالث.</li>
+                <li class="list-group-item" data-en="Cancellation and refund policy is available according to booking terms." data-ar="سياسة الإلغاء والاسترجاع متاحة حسب شروط الحجز.">سياسة الإلغاء والاسترجاع متاحة حسب شروط الحجز.</li>
+                <li class="list-group-item" data-en="Correct information must be entered during booking to ensure ticket validity." data-ar="يجب إدخال بيانات صحيحة أثناء الحجز لضمان صحة التذكرة.">يجب إدخال بيانات صحيحة أثناء الحجز لضمان صحة التذكرة.</li>
+                <li class="list-group-item" data-en="The company reserves the right to modify prices or schedules without prior notice." data-ar="تحتفظ الشركة بحق تعديل الأسعار أو المواعيد دون إشعار مسبق.">تحتفظ الشركة بحق تعديل الأسعار أو المواعيد دون إشعار مسبق.</li>
+              </ul>
+              
+              <h5 class="mt-4" data-en="Cancellation Policy" data-ar="سياسة الإلغاء">سياسة الإلغاء</h5>
+              <ul>
+                <li data-en="Cancel 24 hours before trip: 100% refund" data-ar="الإلغاء قبل 24 ساعة من الرحلة: استرجاع 100%">الإلغاء قبل 24 ساعة من الرحلة: استرجاع 100%</li>
+                <li data-en="Cancel 12 hours before trip: 50% refund" data-ar="الإلغاء قبل 12 ساعة من الرحلة: استرجاع 50%">الإلغاء قبل 12 ساعة من الرحلة: استرجاع 50%</li>
+                <li data-en="Cancel less than 12 hours before trip: No refund" data-ar="الإلغاء قبل أقل من 12 ساعة من الرحلة: لا يوجد استرجاع">الإلغاء قبل أقل من 12 ساعة من الرحلة: لا يوجد استرجاع</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="account" class="page-section">
+    <div class="page-header">
+      <div class="container">
+        <h2 class="text-center" data-en="My Account" data-ar="حسابي">حسابي</h2>
+      </div>
+    </div>
+    
+    <div class="container">
+      <ul class="nav nav-tabs mb-4" id="accountTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+          <button class="nav-link active" id="login-tab" data-bs-toggle="tab" data-bs-target="#login" type="button" role="tab" data-en="Login" data-ar="تسجيل الدخول">تسجيل الدخول</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="register-tab" data-bs-toggle="tab" data-bs-target="#register" type="button" role="tab" data-en="Register" data-ar="إنشاء حساب">إنشاء حساب</button>
+        </li>
+        <li class="nav-item" role="presentation">
+          <button class="nav-link" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" data-en="My Profile" data-ar="ملفي الشخصي">ملفي الشخصي</button>
+        </li>
+      </ul>
+      
+      <div class="tab-content" id="accountTabsContent">
+        <div class="tab-pane fade show active" id="login" role="tabpanel">
+          <div class="card mx-auto" style="max-width: 400px;">
+            <div class="card-body">
+              <h5 class="card-title text-center" data-en="Login" data-ar="تسجيل الدخول">تسجيل الدخول</h5>
+              <form>
+                <div class="mb-3">
+                  <label for="email" class="form-label" data-en="Email Address" data-ar="البريد الإلكتروني">البريد الإلكتروني</label>
+                  <input type="email" class="form-control" id="email" required>
+                </div>
+                <div class="mb-3">
+                  <label for="password" class="form-label" data-en="Password" data-ar="كلمة المرور">كلمة المرور</label>
+                  <input type="password" class="form-control" id="password" required>
+                </div>
+                <div class="d-grid">
+                  <button type="button" class="btn btn-primary" id="loginBtn" data-en="Login" data-ar="تسجيل الدخول">تسجيل الدخول</button>
+                </div>
+              </form>
+              <div class="mt-3 text-center">
+                <small data-en="Don't have an account?" data-ar="ليس لديك حساب؟">ليس لديك حساب؟ <a href="#register" id="goToRegister" data-en="Register now" data-ar="سجل الآن">سجل الآن</a></small>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tab-pane fade" id="register" role="tabpanel">
+          <div class="card mx-auto" style="max-width: 500px;">
+            <div class="card-body">
+              <h5 class="card-title text-center" data-en="Create New Account" data-ar="إنشاء حساب جديد">إنشاء حساب جديد</h5>
+              <form>
+                <div class="mb-3">
+                  <label for="name" class="form-label" data-en="Full Name" data-ar="الاسم الكامل">الاسم الكامل</label>
+                  <input type="text" class="form-control" id="name" required>
+                </div>
+                <div class="mb-3">
+                  <label for="emailReg" class="form-label" data-en="Email Address" data-ar="البريد الإلكتروني">البريد الإلكتروني</label>
+                  <input type="email" class="form-control" id="emailReg" required>
+                </div>
+                <div class="mb-3">
+                  <label for="passwordReg" class="form-label" data-en="Password" data-ar="كلمة المرور">كلمة المرور</label>
+                  <input type="password" class="form-control" id="passwordReg" required>
+                </div>
+                <div class="mb-3">
+                  <label for="mobile" class="form-label" data-en="Mobile Number" data-ar="رقم الجوال">رقم الجوال</label>
+                  <input type="tel" class="form-control" id="mobile">
+                </div>
+                <div class="d-grid">
+                  <button type="button" class="btn btn-success" id="registerBtn" data-en="Create Account" data-ar="إنشاء الحساب">إنشاء الحساب</button>
+                </div>
+              </form>
+              <div class="mt-3 text-center">
+                <small data-en="Already have an account?" data-ar="لديك حساب بالفعل؟">لديك حساب بالفعل؟ <a href="#login" id="goToLogin" data-en="Login" data-ar="تسجيل الدخول">تسجيل الدخول</a></small>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="tab-pane fade" id="profile" role="tabpanel">
+          <div class="card mx-auto" style="max-width: 600px;">
+            <div class="card-body">
+                <div class="text-center mb-3">
+                <label for="userAvatar" class="form-label" data-en="Upload Your Photo" data-ar="قم برفع صورتك">قم برفع صورتك</label>
+                <input type="file" class="form-control" id="userAvatar" accept="image/*" onchange="previewImage(event)">
+                <img id="previewAvatar" class="user-avatar mt-3" alt="User Profile" style="display: none;">
+                </div>
+                <script>
+                function previewImage(event) {
+                  const file = event.target.files[0];
+                  if (file) {
+                  const reader = new FileReader();
+                  reader.onload = function(e) {
+                    const preview = document.getElementById('previewAvatar');
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                  };
+                  reader.readAsDataURL(file);
+                  }
+                }
+                </script>
+              <h5 class="card-title text-center" data-en="Account Information" data-ar="معلومات الحساب">معلومات الحساب</h5>
+              <form>
+                <div class="mb-3">
+                  <label class="form-label" data-en="Full Name" data-ar="الاسم الكامل">الاسم الكامل</label>
+                  <input type="text" class="form-control" value="Osama Hamza">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" data-en="Email Address" data-ar="البريد الإلكتروني">البريد الإلكتروني</label>
+                  <input type="email" class="form-control" value="Rahaf+kyara@example.com">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" data-en="Mobile Number" data-ar="رقم الجوال">رقم الجوال</label>
+                  <input type="tel" class="form-control" value="01123456789">
+                </div>
+                <div class="mb-3">
+                  <label class="form-label" data-en="New Password" data-ar="كلمة المرور الجديدة">كلمة المرور الجديدة</label>
+                  <input type="password" class="form-control">
+                </div>
+                <button type="button" class="btn btn-primary w-100" data-en="Update Information" data-ar="تحديث البيانات">تحديث البيانات</button>
+              </form>
+              <div class="mt-3">
+                <button class="btn btn-outline-secondary w-100" onclick="showPage('tickets')" data-en="View My Tickets" data-ar="عرض تذاكري">عرض تذاكري</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <img src="c:\Users\Nada\Desktop\go-bus-dark.png" height="40" alt="GoBus Logo" class="mb-3">
+          <p class="small" data-en="The leading bus company in Egypt since 2005" data-ar="شركة الحافلات الرائدة في مصر منذ 2004">شركة الحافلات الرائدة في مصر منذ 2004</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h5 data-en="Follow Us" data-ar="تابعنا">تابعنا</h5>
+          <div class="mt-3">
+            <a href="#" class="text-white me-2"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" class="text-white me-2"><i class="fab fa-twitter"></i></a>
+            <a href="#" class="text-white me-2"><i class="fab fa-instagram"></i></a>
+            <a href="#" class="text-white"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <h5 data-en="Download Our App" data-ar="حمل تطبيقنا">حمل تطبيقنا</h5>
+          <div class="mt-2">
+            <a href="#" class="me-2">
+              <img src="c:\Users\Nada\Desktop\link-google.png" height="40" alt="Google Play">
+            </a>
+            <a href="#">
+              <img src="c:\Users\Nada\Desktop\link-apple.png" height="40" alt="App Store">
+            </a>
+          </div>
+        </div>
+      </div>
+      <hr class="border-light">
+      <p data-en="© 2025 Go Bus. All rights reserved." data-ar="© 2025 جو باص. جميع الحقوق محفوظة.">© 2025 جو باص. جميع الحقوق محفوظة.</p>
+    </div>
+  </footer>
+
+<script>
+  document.getElementById('toggleLang')?.addEventListener('click', () => {
+    const htmlTag = document.documentElement;
+    const currentLang = htmlTag.lang;
+    if (currentLang === 'en') {
+      htmlTag.lang = 'ar';
+      htmlTag.dir = 'rtl';
+      localStorage.setItem('lang', 'ar');
+      document.getElementById('bootstrap-css').href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css';
+      document.getElementById('toggleLang').textContent = 'English';
+    } else {
+      htmlTag.lang = 'en';
+      htmlTag.dir = 'ltr';
+      localStorage.setItem('lang', 'en');
+      document.getElementById('bootstrap-css').href = 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css';
+      document.getElementById('toggleLang').textContent = 'العربية';
+    }
+    translatePage();
+  });
+
+  function translatePage() {
+    const currentLang = document.documentElement.lang;
+    const elements = document.querySelectorAll('[data-' + currentLang + ']');
+    
+    elements.forEach(el => {
+      if (el.tagName === 'INPUT' && el.hasAttribute('data-' + currentLang + '-placeholder')) {
+        el.placeholder = el.getAttribute('data-' + currentLang + '-placeholder');
+      } else if (el.hasAttribute('data-' + currentLang)) {
+        el.textContent = el.getAttribute('data-' + currentLang);
+      }
+    });
+    
+    if (document.title && document.querySelector('title').hasAttribute('data-' + currentLang)) {
+      document.title = document.querySelector('title').getAttribute('data-' + currentLang);
+    }
+  }
+
+  function showPage(pageId) {
+    console.log("تم استدعاء الدالة showPage بالمعرف:", pageId);
+    
+    document.querySelectorAll('.page-section').forEach(section => {
+      section.classList.remove('active');
+    });
+    
+    const selectedPage = document.getElementById(pageId);
+    if (selectedPage) {
+      selectedPage.classList.add('active');
+      
+      document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+        link.classList.remove('active');
+      });
+      
+      const activeLink = document.querySelector(`.navbar-nav a[href="#${pageId}"]`);
+      if (activeLink) {
+        activeLink.classList.add('active');
+      }
+      
+      window.scrollTo(0, 0);
+      
+      window.history.pushState({page: pageId}, "", "#" + pageId);
+    } else {
+      console.error("لم يتم العثور على الصفحة بالمعرف:", pageId);
+    }
+  }
+
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log("تم تحميل الصفحة");
+    
+    const savedLang = localStorage.getItem('lang');
+    if (savedLang) {
+      document.documentElement.lang = savedLang;
+      document.documentElement.dir = savedLang === 'ar' ? 'rtl' : 'ltr';
+      document.getElementById('bootstrap-css').href = savedLang === 'ar' 
+        ? 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.rtl.min.css'
+        : 'https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css';
+      document.getElementById('toggleLang').textContent = savedLang === 'ar' ? 'English' : 'العربية';
+      translatePage();
+    }
+    
+    document.querySelectorAll('.navbar-nav .nav-link').forEach(link => {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        const pageId = this.getAttribute('href').substring(1);
+        console.log("تم النقر على:", pageId);
+        showPage(pageId);
+      });
+    });
+    
+    document.getElementById('infoTabs')?.addEventListener('click', function(e) {
+      if (e.target.classList.contains('nav-link')) {
+        e.preventDefault();
+        const tabId = e.target.getAttribute('data-bs-target').substring(1);
+        const tabEl = document.getElementById(tabId);
+        if (tabEl) {
+          document.querySelectorAll('#infoTabsContent .tab-pane').forEach(tab => {
+            tab.classList.remove('show', 'active');
+          });
+          tabEl.classList.add('show', 'active');
+        }
+      }
+    });
+    
+    document.getElementById('accountTabs')?.addEventListener('click', function(e) {
+      if (e.target.classList.contains('nav-link')) {
+        e.preventDefault();
+        const tabId = e.target.getAttribute('data-bs-target').substring(1);
+        const tabEl = document.getElementById(tabId);
+        if (tabEl) {
+          document.querySelectorAll('#accountTabsContent .tab-pane').forEach(tab => {
+            tab.classList.remove('show', 'active');
+          });
+          tabEl.classList.add('show', 'active');
+        }
+      }
+    });
+    
+    document.getElementById('bookTrip1')?.addEventListener('click', function() {
+      document.getElementById('tripResults').style.display = 'none';
+      document.getElementById('bookingConfirmation').style.display = 'block';
+    });
+
+    document.getElementById('bookTrip2')?.addEventListener('click', function() {
+      document.getElementById('tripResults').style.display = 'none';
+      document.getElementById('bookingConfirmation').style.display = 'block';
+    });
+
+    document.getElementById('bookTrip3')?.addEventListener('click', function() {
+      document.getElementById('tripResults').style.display = 'none';
+      document.getElementById('bookingConfirmation').style.display = 'block';
+    });
+
+    document.getElementById('goToRegister')?.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('register-tab').click();
+    });
+
+    document.getElementById('goToLogin')?.addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('login-tab').click();
+    });
+
+    document.getElementById('loginBtn')?.addEventListener('click', function() {
+      document.getElementById('profile-tab').click();
+    });
+
+    document.getElementById('registerBtn')?.addEventListener('click', function() {
+      document.getElementById('profile-tab').click();
+    });
+    
+    const hash = window.location.hash.substring(1);
+    if (hash && document.getElementById(hash)) {
+      showPage(hash);
+    }
+  });
+  
+  window.addEventListener('popstate', function(e) {
+    if (e.state && e.state.page) {
+      showPage(e.state.page);
+    } else {
+      showPage('home');
+    }
+  });
+  
+</script>
+</body>
+</html>
