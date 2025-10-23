@@ -39,17 +39,19 @@ The system addresses common manual transport challenges by introducing **modern 
 
 ---
 
-## 4. System Analysis
+## **4. System Analysis**
 
-### Feasibility Study
-Survey results from Go Bus regular customers:
+### **4.1 Feasibility Study**
+Survey results from Go Bus regular customers:  
 - **78%** prefer booking tickets online.  
 - **62%** struggled with the old system interface.  
 - **55%** require live trip updates.  
 - **70%** favor mobile access.  
 - **60%** desire more secure payment options.
 
-### SWOT Analysis
+---
+
+### **4.2 SWOT Analysis**
 **Strengths:** Established brand, loyal customer base, diverse routes.  
 **Weaknesses:** Outdated legacy system, limited mobile features.  
 **Opportunities:** Demand for online travel services, international expansion.  
@@ -57,21 +59,89 @@ Survey results from Go Bus regular customers:
 
 ---
 
-## 5. Requirements
+## **5. System Diagrams & Testing**
 
-### 5.1 Business Requirements
+### **5.1 Context Diagram**
+Illustrates the main external entities interacting with the system — users, admins, payment gateway, and database.
+<img width="1280" height="427" alt="image" src="https://github.com/user-attachments/assets/652aa1c3-9ba1-4907-a439-bb4bab0da094" />
+<img width="1280" height="426" alt="image" src="https://github.com/user-attachments/assets/c51cf8ca-9541-451a-8888-1c8bd0d0b69d" />
+
+---
+
+### **5.2 Data Flow Diagrams**
+
+#### **5.2.1 Data Flow Diagram – Level 0**
+Shows the primary flow of data between users, the web application, and backend systems (authentication, booking, and payments).
+
+#### **5.2.2 Data Flow Diagram – Level 1**
+Details how internal modules exchange data — for example, from trip selection to booking confirmation and payment validation.
+<img width="1401" height="845" alt="image" src="https://github.com/user-attachments/assets/69e74309-346a-43cd-a640-b1981b8004cb" />
+
+---
+
+### **5.3 Use Case Diagram**
+Visualizes all user and admin interactions, including:  
+- Login and registration  
+- Searching and booking trips  
+- Payment (cash/card)  
+- Canceling bookings  
+- Managing schedules (Admin)  
+<img width="722" height="781" alt="Screenshot 2024-03-17 021137" src="https://github.com/user-attachments/assets/2d617849-ee51-4870-b2ae-5208f7104c1f" />
+
+---
+
+### **5.4 Activity Diagram**
+Displays how users move through system states:  
+**Login → Search → Select Trip → Pay → Confirmation → Notification**
+<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/6d6d99f0-27f8-4488-8504-76df1483787a" />
+<img width="1024" height="768" alt="image" src="https://github.com/user-attachments/assets/197c94c2-e5a1-4511-911e-31ad1e956d0c" />
+
+---
+
+### **5.5 ERD (Entity Relationship Diagram)**
+Represents database entities and relationships between:  
+`User`, `Trip`, `Bus`, `Booking`, and `Payment`.
+<img width="681" height="818" alt="Screenshot 2024-04-30 125439" src="https://github.com/user-attachments/assets/8defade5-dfe0-4f54-b90e-83971d8753c4" />
+
+---
+
+### **5.6 Schema Diagram**
+Defines how tables and their fields are structured for backend data storage.
+<img width="1280" height="427" alt="image" src="https://github.com/user-attachments/assets/f99e26f7-ee42-46cb-9713-30daa6cd970c" />
+<img width="1280" height="426" alt="image" src="https://github.com/user-attachments/assets/29c92c6d-8626-46b4-aff0-187792c58c17" />
+
+---
+
+### **5.7 Testing**
+
+#### **GO BUS Website – Test Cases (English)**
+
+| **Test Case ID** | **Description** | **Inputs** | **Expected Result** | **Status (Pass/Fail)** |
+|------------------|-----------------|-------------|----------------------|-------------------------|
+| TC001 | User logs in with valid credentials | Valid Email + Password | User is redirected to homepage | Pass |
+| TC002 | User logs in with incorrect credentials | Invalid Email or Password | Error message displayed: *"Invalid credentials"* | Pass |
+| TC003 | User searches for available buses | From: Cairo, To: Alexandria, Date: May 15 | List of available trips is displayed | Pass |
+| TC004 | User books a bus and selects cash payment | Select trip + Choose "Cash Payment" | Booking confirmed + Driver info displayed | Pass |
+| TC005 | User books a bus and pays with card | Select trip + Enter card details | Payment processed + Booking confirmed | Pass |
+| TC006 | User cancels the booking | Click "Cancel Booking" after confirmation | Cancellation message shown + Booking is canceled | Pass |
+| TC007 | User receives confirmation message | Booking completed | Notification with driver info is received | Pass |
+
+---
+## **6. Requirements**
+
+### **6.1 Business Requirements**
 - Modernize digital image and engagement process.  
 - Expand target customer reach (including non-locals).  
 - Streamline operations and minimize manual input.
 
-### 5.2 User Requirements
+### **6.2 User Requirements**
 - Search, select, and reserve seats easily.  
 - Access real-time route maps, schedules, and seat availability.  
 - Receive notifications and updates about trips.  
 - Manage bookings and profiles (Arabic/English).  
 - Use secure and flexible payment options.
 
-### 5.3 System Requirements
+### **6.3 System Requirements**
 - **Frontend:** HTML5, CSS3, JavaScript (React.js or similar).  
 - **Backend:** Node.js or Python, PostgreSQL or MongoDB.  
 - **Mobile Compatibility:** Native-like experience on smartphones and tablets.  
@@ -80,16 +150,16 @@ Survey results from Go Bus regular customers:
 
 ---
 
-## 6. Functional & Non-Functional Requirements
+## **7. Functional & Non-Functional Requirements**
 
-### Functional Requirements
+### **7.1 Functional Requirements**
 - User account creation, authentication, and management.  
 - Dynamic trip and seat booking system.  
 - Integrated payment gateway (cards, wallets, cash).  
 - Admin dashboard for route, schedule, and pricing control.  
 - Customer support and feedback modules.
 
-### Non-Functional Requirements
+### **7.2 Non-Functional Requirements**
 - Page load ≤ 2 seconds.  
 - Scalable for peak travel periods.  
 - High reliability (99.9% uptime).  
@@ -98,16 +168,16 @@ Survey results from Go Bus regular customers:
 
 ---
 
-## 7. High-Level Architecture & System Design
+## **8. High-Level Architecture & System Design**
 
-### Key Entities
+### **8.1 Key Entities**
 - **Passenger:** Personal and ticketing details.  
 - **Employee:** Manages bookings and payments.  
 - **Driver:** Associated with bus and trip details.  
 - **Bus & Trip:** Vehicle info, route, timing, seat counts.  
 - **Booking & Payment:** Links users to rides, seats, and payment status.
 
-### Key Diagrams
+### **8.2 Key Diagrams**
 - **Context Diagram:** Overall system interactions.  
 - **DFD (Level 0/1):** Data flow from inquiry to booking confirmation.  
 - **Use Case Diagram:** User/admin actions — login, booking, feedback, cancellation.  
@@ -115,7 +185,7 @@ Survey results from Go Bus regular customers:
 
 ---
 
-## 8. Testing
+## **9. Testing**
 - **User Login:** Valid and invalid credentials.  
 - **Trip Search:** Accurate trip availability results.  
 - **Booking Scenarios:** Tests for both cash and card payments.  
@@ -124,12 +194,15 @@ Survey results from Go Bus regular customers:
 
 ---
 
-## 9. User Interface
+## **10. User Interface**
 - Modern, intuitive interface with smooth booking flow.  
 - Includes trip planners, booking overview, and printable QR-coded tickets.  
 - **Multi-language toggle (Arabic/English).**  
 - Seamless experience across mobile and desktop.
-- ## 🖼️ Project Screenshots
+
+---
+
+## **11. 🖼️ Project Screenshots**
 
 <p align="center">
   <img width="800" alt="image" src="https://github.com/user-attachments/assets/f4b1f7bd-bb59-42c3-bc03-b85a0e1ca677" />
@@ -150,65 +223,13 @@ Survey results from Go Bus regular customers:
 
 ---
 
----
-
-## 10. Conclusion
+## **12. Conclusion**
 The **Go Bus Web Ticketing System** represents a major digital transformation in Egypt’s public transport sector.  
 It combines **advanced web technologies** with real user needs to deliver a **secure, reliable, and convenient** platform for passengers and administrators alike — with room for scalability and continuous improvement.
 
 ---
 
-## 🚀 How to Run the Project
-
-### **1. Clone the Repository**
-\`\`\`bash
-git clone https://github.com/your-username/GoBus-Web-Ticketing-System.git
-cd GoBus-Web-Ticketing-System
-\`\`\`
-
----
-
-### 🧩 **2. Install Dependencies**
-\`\`\`bash
-# For backend:
-cd backend
-npm install
-
-# For frontend:
-cd frontend
-npm install
-\`\`\`
-
----
-
-### ⚙️ **3. Configure Environment Variables**
-Create a \`.env\` file in both **backend** and **frontend** directories, and add the following:
-\`\`\`
-DB_URI=your_database_connection_string
-JWT_SECRET=your_secret_key
-PAYMENT_API_KEY=your_payment_gateway_key
-\`\`\`
-
----
-
-### ▶️ **4. Run the Project**
-\`\`\`bash
-# Start backend:
-npm run start
-
-# Start frontend:
-npm run dev
-\`\`\`
-
----
-
-### 🌐 **5. Access the App**
-Visit the app locally at:  
-👉 **http://localhost:3000**
-
----
-
-### 🔮 **Future Enhancements**
+### **12.1 🔮 Future Enhancements**
 - **AI-based Demand Prediction** – Optimize schedules using real-time analytics.  
 - **Mobile Application (iOS/Android)** – Provide a dedicated mobile experience.  
 - **Voice Assistant Integration** – Enable booking through voice commands.  
@@ -217,8 +238,8 @@ Visit the app locally at:
 - **Multi-City Integration** – Expand coverage across Egypt.
 
 ---
-## 🧑‍💻 Author
 
+## **13. 🧑‍💻 Author**
 - **Nada Attia** → [GitHub Profile](https://github.com/NadaAttia04)  
 - **Farida Ayman** → [GitHub Profile](https://github.com/FaridaAyman)  
 - **Rodina Ahmed** → [GitHub Profile](https://github.com/RodinaAhmed)
