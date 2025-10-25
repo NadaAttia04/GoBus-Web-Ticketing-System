@@ -1,7 +1,7 @@
 cat <<'EOF' > README.md
 # 🚌 GoBus-Web-Ticketing-System
 
-A modern web-based ticket booking platform for Go Bus Egypt, featuring real-time trip tracking, online seat reservation, secure payments, and multilingual support.
+A modern web-based ticket booking platform for Go Bus Egypt, featuring real-time trip tracking, online seat reservation, secure payments, and multilingual support
   <img width="800" alt="image" src="https://github.com/user-attachments/assets/f4b1f7bd-bb59-42c3-bc03-b85a0e1ca677" />
 
 ---
